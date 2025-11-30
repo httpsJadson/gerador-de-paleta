@@ -7,7 +7,64 @@
     <link rel="stylesheet" href="./assets/build/build.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="bg-red-500">
-    
-</body>
+    <body class="bg-gray-900 text-white min-h-screen p-4 md:p-0 m-0 h-full flex flex-col justify-between">
+
+        <header class="bg-gray-800 p-6 rounded-lg">
+            <div class="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto">
+                <div>
+                    <h1 class="text-4xl font-bold">Gerador de Paletas 🎨</h1>
+                    <p class="text-gray-300 mt-2">Gere paletas aleatórias e copie com um clique.</p>
+                </div> 
+            </div>   
+        </header>
+
+        <main class="max-w-4xl w-full mx-auto my-[60px] pb-[40px] bg-gray-800 p-6 rounded-lg">
+            <div id="pallete-configuration" class="mb-8">
+
+                <h2 class="text-2xl font-bold mb-4 border-b border-gray-700 pb-2">Configure sua Paleta</h2>
+
+                <div class="">
+
+                    <div class="flex items-end justify-left gap-4">
+                        <div>
+                            <label for="number-of-colors" class="block text-sm font-medium text-gray-300 mb-2">Quantidade de Cores</label>
+                            <select name="number-of-colors" id="number-of-colors" class="px-4 py-2 bg-gray-700 rounded-lg text-white">
+                                <option value="2">2 Cores</option>
+                                <option value="3">3 Cores</option>
+                                <option value="4">4 Cores</option>
+                                <option value="5">5 Cores</option>
+                            </select>   
+                            
+                        </div> 
+
+                        <button id="btn-generate" class="px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-700 transition">
+                            Gerar Paleta de Cores
+                        </button>   
+                    </div>
+        
+                </div>        
+            </div>
+            <div id="generate-palette" >
+                <h2 class="text-2xl font-bold mb-4 border-b border-gray-700 pb-2">Paleta Gerada</h2>
+                <div id="palette" class="grid h-[300px] grid-cols-1 cols-2">
+                    <div id="color-1" class="color-box h-full border-r border-gray-700"></div>
+                    <div id="color-2" class="color-box h-full border-r border-gray-700"></div>
+                    <div id="color-3" class="color-box h-full border-r border-gray-700 hidden"></div>
+                    <div id="color-4" class="color-box h-full border-r border-gray-700 hidden"></div>
+                    <div id="color-5" class="color-box h-full border-r border-gray-700 hidden"></div>
+                </div>
+
+            </div>
+
+        </main>
+
+        <footer>
+            <div class=" mx-auto flex items-center justify-center text-center text-gray-300 bg-gray-800 p-6 rounded-lg">
+                <p>&copy; 2025 <a href="https://dev-jadson.com/" class="text-blue-400 hover:text-blue-300">Jadson A. da Silva</a>. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+
+        <!-- Carregamos os módulos a partir da raiz /src (é por isso que vamos rodar um servidor) -->
+        <script type="module" src="../src/js/generate.js"></script>
+    </body>
 </html>
